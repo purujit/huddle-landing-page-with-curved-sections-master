@@ -1,0 +1,47 @@
+<script webc:setup>
+    const sections = [
+        {
+            title: 'Grow Together',
+            text: `Generate meaningful discussions with your audience and build a strong, loyal community.
+                   Think of the insightful conversations you miss out on with a feedback form.`,
+            image: "images/illustration-grow-together.svg",
+            class: "grow",
+            top_curve: `
+<svg class="curve" xmlns="http://www.w3.org/2000/svg" viewBox="0 -35 375 95">
+    <path d="M 0 0 C 73 47 73 47 178 58 C 302 38 302 38 375 -35 V 60 H 0" />
+</svg>
+`,
+            bottom_curve: `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 394 41.81" class="curve">
+        <path d="M 0 0 C 95 -21 190 30 300 30 C 351 33 360 32 394 29 V -10 H 0 V 0" />
+`
+        },
+        {
+            title: 'Your Users',
+            text: `It takes no time at all to integrate Huddle with your app's authentication solution. This means,
+                   once signed in to your app, your users can start chatting immediately.`,
+            image: "images/illustration-your-users.svg",
+            class: "users",
+            top_curve: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -44.0873 375 100.1" class="curve">
+    <path d="M 0 0 C 176 -118 288 36 375 56 H 0 V 0"/>
+</svg>
+            `,
+            bottom_curve: `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -24 375 88" class="curve">
+	<path d="M 0 0 C 183 -71 288 36 375 64 V -24 H 0 M" fill="#ffffff"/>
+</svg>
+            `
+        }
+    ];
+</script>
+<section :class="sections[index].class">
+    <!-- generated using https://yqnn.github.io/svg-path-editor -->
+    <div style="width: 100%;" @raw="sections[index].top_curve"></div>
+    <div class="section__content">
+        <img :src="sections[index].image" alt="" class="section__illustration">
+        <h2 @text="sections[index].title"></h2>
+        <span @text="sections[index].text"></span>
+    </div>
+    <div style="width: 100%;" @raw="sections[index].bottom_curve"></div>
+</section>
